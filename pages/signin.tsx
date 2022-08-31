@@ -30,7 +30,7 @@ const Signin: NextPage = () => {
             </div>
             <input className="bg-gray-700 rounded w-4/5 h-10 text-sm" placeholder="Enter your email address..." />
 
-            <button className=" bg-orange-600 text-white w-4/5 h-10 font-bold text-sm rounded">Continue with Email</button>
+            <button  className=" bg-orange-600 text-white w-4/5 h-10 font-bold text-sm rounded"><Link href="/play">Continue with Email</Link></button>
           </div>
 
         </div>
