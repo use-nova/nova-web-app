@@ -1,7 +1,5 @@
-entrypoint = "index.js"
 
 hidden = [".config", ".next", ".swc"]
-
 run = "npm run dev"
 
 [[hints]]
