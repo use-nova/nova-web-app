@@ -25,7 +25,7 @@ const Home: NextPage = () => {
         <div className="flex items-center justify-between pt-4">
           <Image src={NovaLogo} alt="Nova logo" />
 
-          <div className="text-white flex w-3/6 justify-between text-small">
+          <div className="text-white flex w-3/6 justify-between text-small md:w-1/4 lg:w-44">
             <a href="https://discord.gg/mRkzMMBc8Y" target="_blank" >Join Discord</a>
             <Link href="/signin">Sign in</Link>
           </div>
@@ -46,11 +46,11 @@ const Home: NextPage = () => {
 
         {/*instant codegrade section */}
 
-        <div className="h-screen mb-20 mt-20">
-          <h2 className="text-orange-600 font-bold text-xl text-center">Instant Code Grade</h2>
+        <div className="h-screen mb-20 mt-20 lg:h-96">
+          <h2 className="text-orange-600 font-bold text-xl text-center lg:text-4xlg">Instant Code Grade</h2>
 
-          <div className="flex flex-col items-center justify-around h-full">
-            <div className="bg-gray-800 w-full h-52 rounded flex flex-col items-center justify-center text-center">
+          <div className="flex flex-col items-center justify-around h-full lg:flex-row">
+            <div className="bg-gray-800 w-full h-52 rounded flex flex-col items-center justify-center text-center lg:w-1/4">
               <h2 className="text-white font-bold">Explanation</h2>
               <h3 className="text-white text-gray-300">
                 jsdlfkjsdl;fjslfjsfjslfsl;fjlsfjdslfds
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
               </h3>
             </div>
 
-            <div className="bg-gray-800 w-full h-52 rounded flex flex-col items-center justify-center text-center">
+            <div className="bg-gray-800 w-full h-52 rounded flex flex-col items-center justify-center text-center lg:w-1/4">
               <h2 className="text-white font-bold">Explanation</h2>
               <h3 className="text-white text-gray-300">
                 jsdlfkjsdl;fjslfjsfjslfsl;fjlsfjdslfds
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
               </h3>
             </div>
 
-            <div className="bg-gray-800 w-full h-52 rounded flex flex-col items-center justify-center text-center">
+            <div className="bg-gray-800 w-full h-52 rounded flex flex-col items-center justify-center text-center lg:w-1/4">
               <h2 className="text-white font-bold">Explanation</h2>
               <h3 className="text-white text-gray-300">
                 jsdlfkjsdl;fjslfjsfjslfsl;fjlsfjdslfds
@@ -82,7 +82,7 @@ const Home: NextPage = () => {
         {/*contact section */}
 
         <div className="text-white">
-          <h2 className="text-orange-600 font-bold text-xl text-center">Contact</h2>
+          <h2 className="text-orange-600 font-bold text-xl text-center  lg:text-4xlg">Contact</h2>
 
           <div className="flex flex-col items-center">
             <p className="text-center">Questions? Interested? Reach out :)</p>
@@ -92,7 +92,7 @@ const Home: NextPage = () => {
             <p>Juan Ruiz</p>
             <p>juan@usenova.app</p>
             <p>+1 (520) 907-5458</p>
-            <div className="w-2/3 pt-2 flex justify-center justify-evenly">
+            <div className="w-2/3 pt-2 flex justify-center justify-evenly lg:w-2/12">
               <a href="https://github.com/juancaruizc" target="_blank"><Image src={githubIcon} alt="github icon" width="40" height="40" /></a>
               <a href="https://twitter.com/juanca_ruizc" target="_blank"><Image src={twitterIcon} alt="twitter icon" width="40" height="40" /></a>
               <a href="https://www.linkedin.com/in/juan-c-ruiz/" target="_blank"><Image src={linkedinIcon} alt="linkedin icon" width="40" height="40" /></a>
@@ -105,15 +105,18 @@ const Home: NextPage = () => {
         {/* footer */}
 
         <div className="flex text-white text-xs justify-around h-40 items-center">
-          <div>
-            <p>Terms & Conditions</p>
-            <p>©2022 usenova.app</p>
+          <div className="flex w-full justify-around lg:w-1/4">
+            <div>
+              <p>Terms & Conditions</p>
+              <p>©2022 usenova.app</p>
+            </div>
+
+            <div>
+              <p>Privacy Policy</p>
+              <p> All Rights Reserved</p>
+            </div>
           </div>
 
-          <div>
-            <p>Privacy Policy</p>
-            <p> All Rights Reserved</p>
-          </div>
         </div>
 
       </main>
