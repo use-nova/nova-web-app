@@ -7,7 +7,7 @@ import Link from "next/link"
 import novaLogo from '../public/nova_logo.svg'
 import githubIcon from '../public/github_black.svg'
 
-const Signin: NextPage = () => {
+const Signup: NextPage = () => {
   return (
     <div className="h-screen bg-gray-900 flex flex-col items-center justify-center">
       <Head>
@@ -16,11 +16,13 @@ const Signin: NextPage = () => {
         <link rel="icon" href="/nova_logo.svg" />
       </Head>
 
-      <main className="w-5/6 ">
-        <div className="h-96 bg-gray-800 rounded flex flex-col justify-center">
+      <main className="w-5/6 md:w-1/2 lg:flex lg:justify-center lg:items-center">
+        <div className="h-96 bg-gray-800 rounded flex flex-col justify-center lg:w-1/2">
           <div className="flex flex-col items-center justify-center h-4/5 justify-between">
-            <Image src={novaLogo} alt="nova logo" width="50" height="50" />
-            <h1 className="font-bold text-white text-lg">Sign up for Nova</h1>
+            <Link href='/'>
+              <Image src={novaLogo} alt="nova logo" width="50" height="50" />
+            </Link>
+            <h1 className="font-bold text-white text-lg">Sign Up for Nova</h1>
             <button className="bg-white rounded w-4/5 h-10 text-sm flex items-center justify-center font-bold">
               <Image className="pr-2" src={githubIcon} alt="github icon" width="35" height="35" />Continue with Github</button>
             <div className="flex w-4/5 items-center justify-between">
@@ -28,9 +30,9 @@ const Signin: NextPage = () => {
               <p className="text-white">or</p>
               <hr className="w-1/3 bg-white" />
             </div>
-            <input className="bg-gray-700 rounded w-4/5 h-10 text-sm" placeholder="Enter your email address..." />
+            <input className="bg-gray-700 rounded w-4/5 h-10 text-sm text-white" placeholder="Enter your email address..." />
 
-            <button className=" bg-orange-600 text-white w-4/5 h-10 font-bold text-sm rounded">Continue with Email</button>
+            <button className=" bg-orange-600 text-white w-4/5 h-10 font-bold text-sm rounded"><Link href="/play">Continue with Email</Link></button>
           </div>
 
         </div>
@@ -39,4 +41,4 @@ const Signin: NextPage = () => {
   );
 };
 
-export default Signin;
+export default Signup;
