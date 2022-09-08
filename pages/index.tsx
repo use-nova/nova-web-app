@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useRouter } from 'next/router'
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link"
@@ -11,6 +12,9 @@ import linkedinIcon from '../public/linkedin.svg'
 import NovaLogo from "../public/nova_logo.svg";
 
 const Home: NextPage = () => {
+  const router = useRouter()
+
+
   return (
     <div className="h-fit bg-gray-900 flex flex-col items-center">
       <Head>
@@ -27,7 +31,7 @@ const Home: NextPage = () => {
 
           <div className="text-white flex w-3/6 justify-between text-small md:w-1/4 lg:w-44">
             <a href="https://discord.gg/mRkzMMBc8Y" target="_blank" >Join Discord</a>
-            <Link href="/signin">Sign in</Link>
+            <Link href="/signin"><a>Sign in</a></Link>
           </div>
         </div>
 
@@ -37,9 +41,12 @@ const Home: NextPage = () => {
           </h1>
 
           <div className="bg-orange-600 rounded-md w-48 h-8 flex items-center justify-center">
-            <Link href="/signup">
-              <p className="text-white text-base">Try Nova for free</p>
+            <Link href="signup">
+              <button className="text-white text-base" type="button">
+                Try Nova for free
+              </button>
             </Link>
+
           </div>
 
         </div>

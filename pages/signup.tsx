@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useRouter } from 'next/router'
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link"
@@ -8,6 +9,7 @@ import novaLogo from '../public/nova_logo.svg'
 import githubIcon from '../public/github_black.svg'
 
 const Signup: NextPage = () => {
+  const router = useRouter()
   return (
     <div className="h-screen bg-gray-900 flex flex-col items-center justify-center">
       <Head>
@@ -23,8 +25,13 @@ const Signup: NextPage = () => {
               <Image src={novaLogo} alt="nova logo" width="50" height="50" />
             </Link>
             <h1 className="font-bold text-white text-lg">Sign Up for Nova</h1>
-            <button className="bg-white rounded w-4/5 h-10 text-sm flex items-center justify-center font-bold">
-              <Image className="pr-2" src={githubIcon} alt="github icon" width="35" height="35" />Continue with Github</button>
+
+
+            <Link href="/play">
+              <button className="bg-white rounded w-4/5 h-10 text-sm flex items-center justify-center font-bold" type="button">
+                <Image className="pr-2" src={githubIcon} alt="github icon" width="35" height="35" />Continue with Github
+              </button>
+            </Link>
             <div className="flex w-4/5 items-center justify-between">
               <hr className="w-1/3 bg-white" />
               <p className="text-white">or</p>
@@ -32,7 +39,11 @@ const Signup: NextPage = () => {
             </div>
             <input className="bg-gray-700 rounded w-4/5 h-10 text-sm text-white" placeholder="Enter your email address..." />
 
-            <button className=" bg-orange-600 text-white w-4/5 h-10 font-bold text-sm rounded"><Link href="/play">Continue with Email</Link></button>
+            <Link href="/play">
+              <button className=" bg-orange-600 text-white w-4/5 h-10 font-bold text-sm rounded" type="button" >
+                Continue with email
+              </button>
+            </Link>
           </div>
 
         </div>

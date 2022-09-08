@@ -12,16 +12,18 @@ import downArrow from '../public/down_arrow.svg'
 import loadingIcon from '../public/loading_icon.gif'
 
 
-const Play = React.forwardRef(({ onClick, href }, ref) => {
+const Play = () => {
   const [codeInput, setCodeInput] = useState("")
   const [codeResult, setCodeResult] = useState("")
   const [isCodeLoading, setIsCodeLoading] = useState(false)
 
+
+  //POST request to OpenAI API
   const handleSubmit = async (e) => {
     e.preventDefault()
- setIsCodeLoading(true)
+    setIsCodeLoading(true)
     const res = await fetch(`/api/grade-code`, {
-     
+
       body: JSON.stringify({
         code: codeInput
       }),
@@ -35,6 +37,7 @@ const Play = React.forwardRef(({ onClick, href }, ref) => {
     setCodeInput("")
     setIsCodeLoading(false)
   };
+
 
   return (
     <div className="h-fit bg-gray-900 flex flex-col items-center lg:h-screen">
@@ -71,8 +74,8 @@ const Play = React.forwardRef(({ onClick, href }, ref) => {
               />
 
               <div className="flex justify-end pt-4">
-                <button href={href} onClick={onClick} ref={ref} className="bg-orange-600 text-white w-48 h-11 rounded font-bold flex items-center justify-center">
-                  {isCodeLoading ? <Image src={loadingIcon} width="20" height="20"/> : <p>Submit</p>}
+                <button className="bg-orange-600 text-white w-48 h-11 rounded font-bold flex items-center justify-center">
+                  {isCodeLoading ? <Image src={loadingIcon} width="20" height="20" /> : <p>Submit</p>}
                 </button>
               </div>
             </form>
@@ -108,7 +111,7 @@ const Play = React.forwardRef(({ onClick, href }, ref) => {
                 </div>
 
                 <div className="w-full h-fit">
-                   {codeResult &&
+                  {codeResult &&
                     <p className="text-white w-full pb-8">{codeResult}</p>}
                 </div>
               </div>
@@ -122,7 +125,7 @@ const Play = React.forwardRef(({ onClick, href }, ref) => {
                 </div>
 
                 <div className="w-full h-fit">
-                   {codeResult &&
+                  {codeResult &&
                     <p className="text-white w-full pb-8">{codeResult}</p>}
                 </div>
               </div>
@@ -135,6 +138,6 @@ const Play = React.forwardRef(({ onClick, href }, ref) => {
       </main>
     </div>
   );
-})
+}
 
 export default Play;
